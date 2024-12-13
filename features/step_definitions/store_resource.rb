@@ -4,6 +4,7 @@ require "./dor/package"
 require "./dor/inbox"
 require "./dor/storage"
 require "./dor/ingest"
+require "./dor/workspace"
 
 module WorldProperties
   def package
@@ -19,7 +20,11 @@ module WorldProperties
   end
 
   def ingest
-    @ingest ||= Ingest.new(inbox, storage)
+    @ingest ||= Ingest.new(inbox, workspace, storage)
+  end
+
+  def workspace
+    @workspace ||= Workspace.new
   end
 end
 
