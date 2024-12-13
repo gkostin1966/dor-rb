@@ -6,8 +6,11 @@ Feature: Store Resource
 
   We are using resource as a term for the thing we are preserving, i.e. representation, digital object, etc.
 
+  Background:
+    Given an incoming location containing packaged resources
+
   Scenario: Storing a new resource for immediate release
-    Given a package containing the scanned pages, OCR, and metadata
-    When the Collection Manager places the packaged resource in the incoming location
+    Given a package containing the scanned pages, OCR, and metadata in the incoming location
+    When the Collection Manager triggers the package for ingest 
     Then the Collection Manager can see that it was preserved.
 

@@ -25,7 +25,7 @@ end
 
 World(WorldProperties)
 
-Given("a package containing the scanned pages, OCR, and metadata") do
+Given("an incoming location containing packaged resources") do
   (0..4).each do |i|
     id = Identifier.new(i.to_s)
     e = Entity.new(id)
@@ -33,11 +33,14 @@ Given("a package containing the scanned pages, OCR, and metadata") do
     p.add_entity(e)
     inbox.add_package(p)
   end
-  package.add_entity(Entity.new(Identifier.new("a")))
 end
 
-When("the Collection Manager places the packaged resource in the incoming location") do
+Given("a package containing the scanned pages, OCR, and metadata in the incoming location") do
+  package.add_entity(Entity.new(Identifier.new("a")))
   inbox.add_package(package)
+end
+
+When("the Collection Manager triggers the package for ingest") do
   ingest.process_package(package.identifier)
 end
 
