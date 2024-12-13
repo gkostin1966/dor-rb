@@ -6,6 +6,7 @@ group :development, :test do
 end
 
 group :test do
+  gem "cucumber"
   gem "rspec"
   gem "simplecov"
   gem "simplecov-lcov"
