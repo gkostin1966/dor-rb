@@ -73,6 +73,9 @@ FROM rbrs AS development
 # Set the working directory to /app
 WORKDIR /app
 
+# Add app bin to user path
+ENV PATH="/app/bin:$PATH"
+
 USER ${UNAME}
 
 CMD ["tail", "-f", "/dev/null"]
