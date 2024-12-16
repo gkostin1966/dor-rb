@@ -8,7 +8,7 @@ require "./dor/workspace"
 
 module WorldProperties
   def package
-    @package ||= Package.new(Identifier.new("Greg"))
+    @package ||= Package.new(Identifier.new("Hello"))
   end
 
   def inbox
@@ -28,7 +28,7 @@ module WorldProperties
   end
 end
 
-World(WorldProperties)
+# World(WorldProperties)
 
 Given("an incoming location containing packaged resources") do
   (0..4).each do |i|

@@ -1,13 +1,19 @@
+require "securerandom"
+
 class Identifier
   include Comparable
 
   def <=>(other)
-    name <=> other.name
+    uuid <=> other.uuid
   end
 
-  def initialize(name)
-    @name = name
+  def initialize(uuid: SecureRandom.uuid)
+    @uuid = uuid
   end
 
-  attr_reader :name
+  attr_reader :uuid
+
+  def to_s
+    uuid
+  end
 end

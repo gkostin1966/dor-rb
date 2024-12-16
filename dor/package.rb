@@ -7,6 +7,14 @@ class Package
 
   def initialize(identifier)
     @identifier = identifier
+    @monograph = nil
+    @scanned_pages = []
+    @ocr = []
+    @metadata = {}
+  end
+
+  def add(entity)
+    entities << entity
   end
 
   def add_entity(entity)
@@ -18,4 +26,14 @@ class Package
   end
 
   attr_reader :identifier
+
+  attr_writer :monograph
+
+  attr_reader :monograph
+
+  attr_reader :scanned_pages
+
+  attr_reader :ocr
+
+  attr_reader :metadata
 end

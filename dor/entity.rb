@@ -10,4 +10,8 @@ class Entity
   end
 
   attr_reader :identifier
+
+  def to_s
+    identifier.to_s
+  end
 end
